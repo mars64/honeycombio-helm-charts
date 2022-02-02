@@ -89,9 +89,10 @@ The following table lists the configurable parameters of the Honeycomb chart, an
 | `metrics.dataset` | Name of Honeycomb dataset for Kubernetes metrics | `kubernetes-metrics` |
 | `metrics.clusterName` | Name of Kubernetes cluster to use for metrics | `k8s-cluster` |
 | `metrics.metricGroups` | Resource groups (node, pod, container, volume) to collect metrics from | `node, pod` |
-| `metrics.omitLabels` | Pod labels to omit from being emitted as fields in metrics | `nil` |
+| `metrics.omitLabels` | Pod or node labels to omit from being emitted as fields in metrics | `nil` |
 | `metrics.additionalFields` | Additional fields to add to each metric (overrides global setting) | `nil` |
 | `nameOverride` | String to partially override honeycomb.fullname template with a string (will append the release name) | `nil` |
+| `metrics.includeNodeLabels` | Attaches node metadata to metric events prefixed by `.label`. Node labels will respect the `omitLabels` list. | `false`
 | `fullnameOverride` | String to fully override honeycomb.fullname template with a string | `nil` |
 | `imagePullSecrets` | Specify docker-registry secret names as an array | `[]` |
 | `image.repository` | Honeycomb Agent Image name | `honeycombio/honeycomb-kubernetes-agent` |
